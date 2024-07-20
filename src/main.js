@@ -1,24 +1,24 @@
 const Game = (function() {
   let board = Array(9).fill('');
 
-  let turno = true;
+  let turn = true;
 
-  const changeTurno = () => {
-    turno = !turno;
+  const changeTurn = () => {
+    turn = !turn;
   };
 
   const restart = () => {
-    turno = true;
+    turn = true;
   };
 
   const players = { x: 'X', o: 'O' };
 
   const mark = (index) => {
-    let sign = turno ? players.x : players.o;
+    let sign = turn ? players.x : players.o;
     
     if (board[index] === '') {
       board[index] = sign;
-      changeTurno();
+      changeTurn();
     }
   };
 
